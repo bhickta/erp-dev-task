@@ -21,6 +21,7 @@ app_license = "mit"
 # 	}
 # ]
 
+
 # Includes in <head>
 # ------------------
 
@@ -144,6 +145,12 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+    "Customer": {
+        "after_insert": "erp_dev_task.api.create_sales_order_if_delhi",
+        "on_trash": "erp_dev_task.api.delete_sales_order_if_exists"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -177,6 +184,10 @@ app_license = "mit"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "erp_dev_task.event.get_events"
 # }
+override_whitelisted_methods = {
+    'POST /api/method/erp_dev_task.api.save_pincodes':'erp_dev_task.api.save_pincodes',
+    'GET /api/method/erp_dev_task.api.get_pincode_and_taluk_data':'erp_dev_task.api.get_pincode_and_taluk_data'
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,

@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-07 18:17:12.816837",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "officename",
+  "pincode",
+  "taluk",
+  "districtname",
+  "statename"
+ ],
+ "fields": [
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Int",
+   "label": "pincode"
+  },
+  {
+   "fieldname": "taluk",
+   "fieldtype": "Link",
+   "label": "taluk",
+   "options": "Taluk"
+  },
+  {
+   "fieldname": "districtname",
+   "fieldtype": "Data",
+   "label": "districtName"
+  },
+  {
+   "fieldname": "statename",
+   "fieldtype": "Data",
+   "label": "stateName"
+  },
+  {
+   "fieldname": "officename",
+   "fieldtype": "Data",
+   "label": "officeName"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-07 18:22:08.592882",
+ "modified_by": "Administrator",
+ "module": "Erp Dev Task",
+ "name": "Pincode",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
