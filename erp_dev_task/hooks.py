@@ -21,6 +21,15 @@ app_license = "mit"
 # 	}
 # ]
 
+fixtures = [
+    {
+        "dt": "Property Setter",
+        "filters": [
+            ["module", "=", "Erp Dev Task"]
+        ],
+    }
+]
+
 # Includes in <head>
 # ------------------
 
@@ -137,13 +146,17 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+    "Customer": {
+        "after_insert": "erp_dev_task.erp_dev_task.doctype.customer.customer.after_insert",
+        "on_trash": "erp_dev_task.erp_dev_task.doctype.customer.customer.on_trash",
+    }
+}
 
 # Scheduled Tasks
 # ---------------
