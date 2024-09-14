@@ -22,12 +22,19 @@ app_license = "mit"
 # ]
 
 fixtures = [
-    {
-        "dt": "Property Setter",
-        "filters": [
-            ["module", "=", "Erp Dev Task"]
-        ],
-    }
+        {
+            "dt": "Property Setter",
+            "filters": [
+                ["module", "=", "Erp Dev Task"]
+            ],
+        },
+        {
+            "dt": "Item",
+            "filters": [
+                ["item_group", "=", "Products"]
+            ],
+        },
+    
 ]
 
 # Includes in <head>

@@ -26,7 +26,7 @@ class CreateSalesOrder():
         self.sales_order.customer = self.customer.customer_name
         self.sales_order.order_type = "Sales"
         self.sales_order.transaction_date = frappe.utils.nowdate()
-        self.sales_order.set_warehouse = "Finished Goods - SSD"
+        self.sales_order.set_warehouse = frappe.db.get_value("Warehouse", {"warehouse_name": "Finished Goods"}, "name")
     
     def create_sales_order_items(self):
         items = frappe.db.get_all("Item", filters={"item_group": "Products"}, fields=["name"], pluck="name")
